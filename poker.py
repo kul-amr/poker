@@ -47,7 +47,12 @@ def get_rank(hand):
 # check if the hand has valid values passed
 def valid_hand(hand):
 
-    return all(i in card_vals.keys() for i in hand)
+    valid = False
+
+    if all(i in card_vals.keys() for i in hand) and len(hand)==5:
+        valid = True
+
+    return valid
 
 
 if len(sys.argv) == 3:
